@@ -5,14 +5,6 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-# source the .env file
-echo "Sourcing the .env file..."
-if [ ! -f .env ]; then
-    echo -e "${RED}The .env file does not exist${NC}"
-    exit 1
-fi
-source .env
-
 # Get the current machine public IP address
 echo "Getting the public IP address..."
 PUBLIC_IP=$(curl -s "https://ipinfo.io/ip" || curl -s "https://ipv4.icanhazip.com")
